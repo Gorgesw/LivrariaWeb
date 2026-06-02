@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void {
         Schema::create('locacoes', function (Blueprint $table) {
-            $table->id('loccodigo')->primary();
+            $table->id('loccodigo');
             $table->string('locdescricao', 100);
         });
     }

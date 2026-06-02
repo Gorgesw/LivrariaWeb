@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void {
     Schema::create('emprestimos', function (Blueprint $table) {
-        $table->id('empcodigo')->primary();
+        $table->id('empcodigo');
 
         $table->bigInteger('pescodigo');
         $table->bigInteger('livcodigo');
@@ -30,7 +30,6 @@ return new class extends Migration
             ->references('livcodigo')
             ->on('livros');
 
-        $table->check('sitcodigo IN (1,2,3)');
     });
     }
 

@@ -11,14 +11,13 @@ return new class extends Migration
      */
     public function up(): void {
         Schema::create('pessoas', function (Blueprint $table) {
-            $table->id('pescodigo')->primary();
+            $table->id('pescodigo');
             $table->string('pesnome', 200);
             $table->string('pesendereco', 300)->nullable();
             $table->string('pestelefone', 30)->nullable();
             $table->smallInteger('pessexo');
             $table->string('pescpf', 14)->unique();
 
-            $table->check('pessexo IN (1,2)');
         });
     }
 
